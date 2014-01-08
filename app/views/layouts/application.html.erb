@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <%= stylesheet_link_tag "application" %>
+     <script type="text/javascript" src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'> </script>
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+  <body>
+
+
+
+  <div id="header">
+    <div id="logo"> <strong>PUKA KILLA Bed and breakfast </strong></div>
+    <div id="info">
+      <strong>Información reservas </strong><br/>
+      <strong>(+591) 70 71 76 02 </strong><br/>
+      <strong>info@pukakillahotels.com </strong>
+    </div>
+  </div>
+
+
+  <div class="clear"></div>
+
+  <div id="slides">
+        <img src="/assets/imagen1.jpg">
+          <img src="/assets/imagen2.jpg">
+          <img src="/assets/imagen3.jpg">
+  </div>
+
+  <div id="menu">
+    <ul id="sidebar">
+        
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/" %>
+          <a class="highclass"href="/">Nosotros</a>
+        <%else%>
+          <li> <a href="/">Nosotros</a> </li>
+        <%end%>        
+        <li> <a href="/prueba">Galeria de Fotos</a> </li> 
+        <li><a href="/prueba">Turismo en Cochabamba</a></li>
+        <li><a href="/prueba">Comentarios</a></li>
+        <li><a href="/prueba">Precios y reservas</a></li>
+    </ul>
+</div>
+
+  <div id="container">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
+      <%= content_tag :h1, yield(:title) if show_title? %>
+      <%= yield %>
+    </div>
+     <div class="clear"></div>
+     
+  <div id="espacio">
+    <div id="sociales">
+      <p> Tambien estamos en </p>
+        <img src="/assets/face.png">
+        <img src="/assets/google.png">
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="footer">
+    <div class="arbol">
+      El hotel
+      <div class="subArbol">
+        Instalaciones y servicios
+        Ubicación
+        Nosotros
+      </div>
+    </div>
+    <div class="arbol">
+      Galeria de Fotos
+    </div>
+    <div class="arbol">
+      Turismo en Cochabamba
+      <div class="subArbol">
+        Turismo en la ciudad
+        Alrederores
+        Consejos
+      </div>
+    </div>
+    <div class="arbol">
+      Comentarios
+    </div>
+    <div class="arbol">
+      Contactos y reservas
+    </div>
+  </div>
+ 
+  </body>
+</html>
+
+<script src="/assets/jquery.slides.min.js"></script>
+<script>
+  $(function() {
+    $('#slides').slidesjs({
+      width: 920,
+      height: 350,
+      play: {
+        active: true,
+        auto: true,
+        interval: 5000,
+        swap: true
+      }
+    });
+  });
+</script>
