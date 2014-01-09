@@ -30,7 +30,7 @@ class PrincipalController < ApplicationController
   def create
     @comentario = Comentario.new(comentario_params)
     if @comentario.save
-      flash[:notice]="Gracias por su interés en Jatun Jallpa, su solicitud ha sido enviada correctamente y nos pondremos en contacto con usted tan pronto como podamos. Que tenga un buen día."
+      flash[:notice]="Gracias por su interés en Puka Killa."
       redirect_to(:root)
     else
       flash[:notice]="No cumplio los estandares de publicacion. (No se llenaron todos los datos/Email incorrecto) "
@@ -40,6 +40,6 @@ class PrincipalController < ApplicationController
 
   private 
   def comentario_params
-    params.require(:comentarios).permit(:contenido,:autor)
+    params.require(:comentario).permit(:contenido,:autor)
   end
 end

@@ -73,13 +73,11 @@ a:focus {
 	padding-right: 10px;
 }
 
-#espacio{
-	height: 260px;
-}
+
 
 #sociales{
-	padding-top: 170px;
-    padding-left: 10px;
+	margin-top: 190px;
+	margin-bottom: 50px;
 }
 
 #sociales p{
