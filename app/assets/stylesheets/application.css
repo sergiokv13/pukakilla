@@ -78,8 +78,7 @@ a:focus {
 }
 
 #sociales{
-	position: absolute;
-    bottom: -30px;
+	padding-top: 170px;
     padding-left: 10px;
 }
 
