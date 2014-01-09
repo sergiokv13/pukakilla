@@ -38,17 +38,37 @@
           <li> <a href="/">Inicio</a> </li>
         <%end%>  
 
-        <li> <a href="/hospedaje">El Hotel</a>  
-            <ul> 
-              <li><a href="/hospedaje/instalaciones-y-servicios">Instalaciones y servicios</a></li> 
-              <li><a href="/hospedaje/ubicacion">Ubicacion</a></li>
-              <li><a href="/hospedaje/nosotros">Nosotros</a></li>
-            </ul> 
-        </li>
-        <li><a href="/prueba">Galeria de fotos</a></li>
-        <li><a href="/turismo-cochabamba">Turismo en Cochabamba</a></li>
-        <li><a href="/comentarios">Comentarios</a></li>
-        <li><a href="/mail-telefono">Contacto y reserva</a></li>
+      <li> <a href="/hospedaje">El Hotel</a>  
+          <ul> 
+            <li><a href="/hospedaje/instalaciones-y-servicios">Instalaciones y servicios</a></li> 
+            <li><a href="/hospedaje/ubicacion">Ubicacion</a></li>
+            <li><a href="/hospedaje/nosotros">Nosotros</a></li>
+          </ul> 
+      </li>
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/prueba" %>
+          <a class="highclass"href="/prueba">Galeria de fotos</a>
+        <%else%>
+          <li><a href="/prueba">Galeria de fotos</a></li>
+        <%end%> 
+        
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/turismo-cochabamba" %>
+          <a class="highclass"href="/turismo-cochabamba">Turismo en Cochabamba</a>
+        <%else%>
+          <li><a href="/turismo-cochabamba">Turismo en Cochabamba</a></li>
+        <%end%>
+        
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/comentarios" %>
+          <a class="highclass"href="/comentarios">Comentarios</a>
+        <%else%>
+          <li><a href="/comentarios">Comentarios</a></li>
+        <%end%>
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/mail-telefono" %>
+          <a class="highclass"href="/mail-telefono">Contacto y reserva</a>
+        <%else%>
+          <li><a href="/mail-telefono">Contacto y reserva</a></li>
+        <%end%>
     </ul>
 </div>
 

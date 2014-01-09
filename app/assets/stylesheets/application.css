@@ -310,10 +310,11 @@ h2{
 		}
 
 		a.highclass{
+			font-family:Impact, Charcoal, sans-serif,Georgia,Serif;
 			border-bottom: solid 1px #675D51;
 			border-bottom-style: dashed; 
 		    padding: 15px 20px;
-		    font-size: 13px;
+		    font-size: 14px;
 		    font-weight: 4px;
 		    color: white;
 		    text-decoration: none;
@@ -329,7 +330,7 @@ h2{
 				left bottom,
 				color-stop(0, #8F5717),
 				color-stop(1, #BD7931)
-			);8F5717
+			);
 			background-image: -o-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
 			background-image: -moz-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
 			background-image: -webkit-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
