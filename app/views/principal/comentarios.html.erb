@@ -1,0 +1,35 @@
+<% content_for :title, "Comentarios" %>
+
+<h1>COMENTARIOS</h1>
+<p>Nos exforzamos cada día para que nuestros huéspedes se sientan como en casa cuando se quedan en nuestro Hostel. En esta sección puedes darnos tu opinión sobre tu estancia en Puka Killa que pueda servir a futuros viajeros.</p>
+
+<h2>Últimas opiniones:</h2>
+<% @comentarios.each do |comentario| %>
+	
+	<strong>
+		<%= comentario.autor %>
+	</strong>
+	comentó:
+	<br/>
+	<cite>
+	<%= comentario.contenido %>
+	</cite>
+	<br/>
+	<%= comentario.created_at.strftime("%D") %>
+<% end %>
+
+<h2>Dejar una opinión:</h2>
+<%= form_for :comentario,url: {:controller => :principal, :action => 'create'} do |f|%>
+
+		<p>
+		<%= f.label :Contenido %><br>
+		<%= f.text_area :contenido,:size=>"30x5" %>
+		</p>
+		
+		<p>
+		<%= f.label :Autor %><br>
+		<%= f.text_field :autor,:size=>"20"%>
+		</p> 
+	
+		<%= f.submit :Comentar %>
+<% end %>

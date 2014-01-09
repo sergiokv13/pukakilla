@@ -45,7 +45,7 @@ a:focus {
 	width: 450px;
 	height: 300px;
 	background-color: white;
-	z-index: 20;
+	z-index: 10;
 	position: absolute; 
 	box-shadow: 10px 4px 5px #888888;
 }
@@ -74,12 +74,12 @@ a:focus {
 }
 
 #espacio{
-	height: 230px;
+	height: 260px;
 }
 
 #sociales{
 	position: absolute;
-    bottom: 2px;
+    bottom: -30px;
     padding-left: 10px;
 }
 
@@ -251,8 +251,12 @@ a:focus {
   h1{
   	color: #016797;
   	font-size: 18px;
+}
 
-  }
+h2{
+	color: #016797;
+	font-size: 15px;
+}
 
   #menu {
   		margin-top: -100px;
@@ -267,7 +271,6 @@ a:focus {
 		   -moz-box-sizing: border-box;
 		}
 		#sidebar{
-			
 		    margin: 0;
 		    padding: 0;
 		    list-style: none;
@@ -279,8 +282,8 @@ a:focus {
 			border-bottom: solid 1px #675D51;
 			border-bottom-style: dashed; 
 			background: #DA0035;
-		    padding: 15px 20px;
-		    font-size: 13px;
+		    padding: 13px 20px;
+		    font-size: 14px;
 		    font-weight: 4px;
 		    color: white;
 		    text-decoration: none;
@@ -326,7 +329,7 @@ a:focus {
 				left bottom,
 				color-stop(0, #8F5717),
 				color-stop(1, #BD7931)
-			);
+			);8F5717
 			background-image: -o-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
 			background-image: -moz-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
 			background-image: -webkit-linear-gradient(bottom, #8F5717 0%, #BD7931 100%);
@@ -338,10 +341,10 @@ a:focus {
 			padding-right: 0px;
 			list-style: none;
 			border-radius: 0 0 5px 5px; 
-			opacity: 0; /* no son visibles */ 
+			//opacity: 0; /* no son visibles */ 
 			position: absolute; 
-			margin-top :-53px; 
-			margin-left:241px; /* el color de fondo */ 
+			margin-top :-46px; 
+			margin-left:238px; /* el color de fondo */ 
 			/* animamos su visibildiad */ -moz-transition: opacity .25s ease .1s; -webkit-transition: opacity .25s ease .1s; -o-transition: opacity .25s ease .1s; -ms-transition: opacity .25s ease .1s; transition: opacity .25s ease .1s; 
 			z-index: 20;
 		} 
@@ -361,5 +364,5 @@ a:focus {
 			overflow: visible; 
 		} 
 		#sidebar ul li a:hover{ 
-			background: #003132;
+			background: #DA0035;
 	}

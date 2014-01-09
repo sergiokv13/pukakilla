@@ -33,14 +33,22 @@
     <ul id="sidebar">
         
         <% if current_uri = request.env['PATH_INFO'].to_s == "/" %>
-          <a class="highclass"href="/">Nosotros</a>
+          <a class="highclass"href="/">Inicio</a>
         <%else%>
-          <li> <a href="/">Nosotros</a> </li>
-        <%end%>        
-        <li> <a href="/prueba">Galeria de Fotos</a> </li> 
-        <li><a href="/prueba">Turismo en Cochabamba</a></li>
-        <li><a href="/prueba">Comentarios</a></li>
-        <li><a href="/prueba">Precios y reservas</a></li>
+          <li> <a href="/">Inicio</a> </li>
+        <%end%>  
+
+        <li> <a href="/hospedaje">El Hotel</a>  
+            <ul> 
+              <li><a href="/hospedaje/instalaciones-y-servicios">Instalaciones y servicios</a></li> 
+              <li><a href="/hospedaje/ubicacion">Ubicacion</a></li>
+              <li><a href="/hospedaje/nosotros">Nosotros</a></li>
+            </ul> 
+        </li>
+        <li><a href="/prueba">Galeria de fotos</a></li>
+        <li><a href="/turismo-cochabamba">Turismo en Cochabamba</a></li>
+        <li><a href="/comentarios">Comentarios</a></li>
+        <li><a href="/mail-telefono">Contacto y reserva</a></li>
     </ul>
 </div>
 
