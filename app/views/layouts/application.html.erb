@@ -26,6 +26,8 @@
         <img src="/assets/imagen3.jpg" height="auto">
   </div>
 
+
+
   <div id="bodyorighi">
   <div id="menu">
     <ul id="sidebar">
@@ -69,7 +71,6 @@
         <%end%>
     </ul>
 </div>
-
   <div id="container">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -77,7 +78,7 @@
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
     </div>
-     <div class="clear"></div>
+     
      
 
     <div id="sociales">
@@ -86,12 +87,11 @@
         <img src="/assets/google.png">
     </div>
 
+    </div>
 
 
   <div class="clear"></div>
 
-  
- </div>
  <div id="footer">
  <div id="alinear">
     <div class="arbol">
