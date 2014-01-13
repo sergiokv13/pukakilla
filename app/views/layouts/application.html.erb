@@ -8,9 +8,6 @@
     <%= yield(:head) %>
   </head>
   <body>
-
-
-
   <div id="header">
     <div id="logo"> <strong>PUKA KILLA Bed and breakfast </strong></div>
     <div id="info">
@@ -24,11 +21,12 @@
   <div class="clear"></div>
 
   <div id="slides">
-        <img src="/assets/imagen1.jpg">
-          <img src="/assets/imagen2.jpg">
-          <img src="/assets/imagen3.jpg">
+        <img src="/assets/imagen1.jpg" height="auto">
+        <img src="/assets/imagen2.jpg" height="auto">
+        <img src="/assets/imagen3.jpg" height="auto">
   </div>
 
+  <div id="bodyorighi">
   <div id="menu">
     <ul id="sidebar">
         
@@ -92,7 +90,10 @@
 
   <div class="clear"></div>
 
-  <div id="footer">
+  
+ </div>
+ <div id="footer">
+ <div id="alinear">
     <div class="arbol">
       El hotel
       <div class="subArbol">
@@ -119,7 +120,7 @@
       Contactos y reservas
     </div>
   </div>
- 
+  </div>
   </body>
 </html>
 
@@ -127,8 +128,8 @@
 <script>
   $(function() {
     $('#slides').slidesjs({
-      width: 920,
       height: 350,
+      width: 920,
       play: {
         active: true,
         auto: true,
