@@ -4,6 +4,7 @@
 <p>Nos exforzamos cada día para que nuestros huéspedes se sientan como en casa cuando se quedan en nuestro Hostel. En esta sección puedes darnos tu opinión sobre tu estancia en Puka Killa que pueda servir a futuros viajeros.</p>
 
 <h2>Últimas opiniones:</h2>
+<div id="espacioComent">
 <% @comentarios.each do |comentario| %>
 	
 	<strong>
@@ -16,20 +17,58 @@
 	</cite>
 	<br/>
 	<%= comentario.created_at.strftime("%D") %>
+	<br/>
 <% end %>
+</div>
+<div id="links">
+<a  href="#" class="clickAnt">Anterior</a>
+<a  href="#" class="clickSig">Siguiente</a>
+</div>
+
+<div id="numComent">
+	<%=Comentario.count%>
+</div>	
 
 <h2>Dejar una opinión:</h2>
 <%= form_for :comentario,url: {:controller => :principal, :action => 'create'} do |f|%>
 
-		<p>
+		<div id="contenido">
 		<%= f.label :Contenido %><br>
 		<%= f.text_area :contenido,:size=>"30x5" %>
-		</p>
-		
-		<p>
+		</div>
+	
 		<%= f.label :Autor %><br>
 		<%= f.text_field :autor,:size=>"20"%>
-		</p> 
-	
+		<br/>
 		<%= f.submit :Comentar %>
+
 <% end %>
+
+
+
+
+
+
+
+<script type="text/javascript">
+var currentPage = 1;
+$('.clickSig').click(function() {
+  	
+	currentPage++;
+	var numero =  document.getElementById("numComent").innerHTML;
+	if (currentPage <= numero)
+		$("#espacioComent").load("/comentarios?page="+currentPage+" #espacioComent");
+	else
+		$("#espacioComent").html("<strong>No hay mas comentarios que mostrar</strong>");
+    return false;
+});
+
+$('.clickAnt').click(function() {
+  	
+	currentPage--;
+	var numero =  document.getElementById("numComent").innerHTML;
+	if (currentPage >= 0)
+		$("#espacioComent").load("/comentarios?page="+currentPage+" #espacioComent");		
+    return false;
+});
+</script>

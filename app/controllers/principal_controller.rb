@@ -20,8 +20,11 @@ class PrincipalController < ApplicationController
   def turismo
   end
 
+  def missing
+  end
+
   def comentarios
-    @comentarios = Comentario.all
+    @comentarios = Comentario.reorder("created_at DESC").paginate(:page => params[:page] , :per_page => 1)
   end
 
   def contacto

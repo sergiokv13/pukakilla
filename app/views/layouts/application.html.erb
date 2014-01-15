@@ -3,7 +3,9 @@
   <head>
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
+    <%= favicon_link_tag "/assets/favicon.ico" %>
      <script type="text/javascript" src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'> </script>
+     <link rel="stylesheet" href="/assets/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" /> <script type="text/javascript" src="/assets/jquery.fancybox.pack.js?v=2.1.5"></script> <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css"media="screen" /> <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <%= csrf_meta_tag %>
     <%= yield(:head) %>
   </head>
@@ -20,11 +22,27 @@
 
   <div class="clear"></div>
 
-  <div id="slides">
-        <img src="/assets/imagen1.jpg" height="auto">
-        <img src="/assets/imagen2.jpg" height="auto">
-        <img src="/assets/imagen3.jpg" height="auto">
-  </div>
+  <% if current_uri = request.env['PATH_INFO'].to_s == "/instalaciones-y-servicios" %>
+        <img class="homeIMG" src="/assets/instalaciones.jpg" >
+  <%else%>
+    <% if current_uri = request.env['PATH_INFO'].to_s == "/hospedaje" %>
+        <img class="homeIMG" src="/assets/hotel.jpg" >
+    <%else%>
+      <% if current_uri = request.env['PATH_INFO'].to_s == "/ubicacion" %>
+        <img class="homeIMG" src="/assets/ubicacion.jpg" >
+      <%else%>
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/turismo-cochabamba" %>
+          <img class="homeIMG" src="/assets/turismo.jpg" >
+        <%else%>
+          <% if current_uri = request.env['PATH_INFO'].to_s == "/las-habitaciones" %>
+           <img class="homeIMG" src="/assets/habitaciones.jpg" >
+          <%else%>
+             <div id="slides">
+                  <img src="/assets/pukakilla.jpg" height="auto">
+                  <img src="/assets/pukakilla2.jpg" height="auto">
+                  <img src="/assets/pukakilla3.jpg" height="auto">
+            </div>
+  <% end %> <% end %> <% end %> <% end %> <% end %>
 
 
 
@@ -38,18 +56,38 @@
           <li> <a href="/">Inicio</a> </li>
         <%end%>  
 
-      <li> <a href="/hospedaje">El Hotel</a>  
-          <ul> 
-            <li><a href="/hospedaje/instalaciones-y-servicios">Instalaciones y servicios</a></li> 
-            <li><a href="/hospedaje/ubicacion">Ubicacion</a></li>
-            <li><a href="/hospedaje/nosotros">Nosotros</a></li>
-          </ul> 
-      </li>
-
-        <% if current_uri = request.env['PATH_INFO'].to_s == "/prueba" %>
-          <a class="highclass"href="/prueba">Galeria de fotos</a>
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/hospedaje" %>
+          <a class="highclass"href="/hospedaje">El Hotel</a>
         <%else%>
-          <li><a href="/prueba">Galeria de fotos</a></li>
+          <li> <a href="/hospedaje">El Hotel</a> </li>
+        <%end%>
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/instalaciones-y-servicios" %>
+          <a class="highclass"href="/instalaciones-y-servicios">Instalaciones y servicios</a>
+        <%else%>
+          <li><a href="/instalaciones-y-servicios">Instalaciones y servicios</a></li>
+        <%end%>
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/ubicacion" %>
+          <a class="highclass"href="/ubicacion">Ubicacion</a>
+        <%else%>
+          <li><a href="/ubicacion">Ubicacion</a></li>
+        <%end%>
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/las-habitaciones" %>
+          <a class="highclass"href="/las-habitaciones">Las Habitaciones</a>
+        <%else%>
+          <li><a href="/las-habitaciones">Las Habitaciones</a></li>
+        <%end%>
+
+        
+       
+      
+
+        <% if current_uri = request.env['PATH_INFO'].to_s == "/galeria-de-fotos" %>
+          <a class="highclass"href="/galeria-de-fotos">Galeria de fotos</a>
+        <%else%>
+          <li><a href="/galeria-de-fotos">Galeria de fotos</a></li>
         <%end%> 
         
         <% if current_uri = request.env['PATH_INFO'].to_s == "/turismo-cochabamba" %>
@@ -83,8 +121,8 @@
 
     <div id="sociales">
       <p> Tambien estamos en </p>
-        <img src="/assets/face.png">
-        <img src="/assets/google.png">
+        <a href="https://www.facebook.com/pages/Puka-Killa/1388247604720424?fref=ts"  target="_blank"><img src="/assets/face.png"></a>
+        <a href="https://plus.google.com/108676980590506808344/posts"  target="_blank"><img src="/assets/google.png"></a>
     </div>
 
     </div>

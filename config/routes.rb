@@ -1,15 +1,16 @@
 Puka::Application.routes.draw do
   get "principal/index"
-  get "/prueba" => "principal#prueba"
+  get "/galeria-de-fotos" => "principal#prueba"
   get "/hospedaje" => "principal#hotel"
-  get "/hospedaje/instalaciones-y-servicios" => "principal#instalaciones"
-  get "/hospedaje/ubicacion" => "principal#ubicacion"
-  get "/hospedaje/nosotros" => "principal#nosotros"
+  get "/instalaciones-y-servicios" => "principal#instalaciones"
+  get "/ubicacion" => "principal#ubicacion"
+  get "/las-habitaciones" => "principal#nosotros"
   get "/turismo-cochabamba" => "principal#turismo"
   get "/comentarios" => "principal#comentarios"
   get "/mail-telefono" => "principal#contacto"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get "/missing"=> "principal#missing"
   post '/create' => 'principal#create'
 
   # You can have the root of your site routed with "root"
@@ -63,4 +64,5 @@ Puka::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  get "*missing"=> redirect("/missing")
 end

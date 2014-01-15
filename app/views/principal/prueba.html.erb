@@ -1,31 +1,31 @@
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
-Esta Pagina esta en construccion y su existencia solo tiene proposito de prueba <br/>
+<% content_for :title, "Galeria de Fotos" %>
+
+<h2>Galeria de fotos</h2>
+
+<a rel="gallery" class="fancybox" href="/assets/balcon.jpg"><img src="/assets/balcon.jpg" alt="Balcón" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/banho.jpg"><img src="/assets/banho.jpg" alt="Baño" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/comedor.jpg"><img src="/assets/comedor.jpg" alt="Comedor" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/desayuno.jpg"><img src="/assets/desayuno.jpg" alt="Desayuno" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/gradas.jpg"><img src="/assets/gradas.jpg" alt="Gradas" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/pasillo.jpg"><img src="/assets/pasillo.jpg" alt="Pasillo" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/tunari.jpg"><img src="/assets/tunari.jpg" alt="Tunari" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/vista.jpg"><img src="/assets/vista.jpg" alt="Vista" height="100px" width="100px"/></a>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            beforeShow : function() {
+                var alt = this.element.find('img').attr('alt');
+                this.inner.find('img').attr('alt', alt);
+                this.title = alt;
+            }
+        });
+    });
+</script>
