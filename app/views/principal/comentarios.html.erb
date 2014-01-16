@@ -33,11 +33,11 @@
 <%= form_for :comentario,url: {:controller => :principal, :action => 'create'} do |f|%>
 
 		<div id="contenido">
-		<%= f.label :Contenido %><br>
+		<%= f.label :Tu_opinion %><br>
 		<%= f.text_area :contenido,:size=>"30x5" %>
 		</div>
 	
-		<%= f.label :Autor %><br>
+		<%= f.label :Nombre %><br>
 		<%= f.text_field :autor,:size=>"20"%>
 		<br/>
 		<%= f.submit :Comentar %>
@@ -58,8 +58,9 @@ $('.clickSig').click(function() {
 	var numero =  document.getElementById("numComent").innerHTML;
 	if (currentPage <= numero)
 		$("#espacioComent").load("/comentarios?page="+currentPage+" #espacioComent");
-	else
+	else{
 		$("#espacioComent").html("<strong>No hay mas comentarios que mostrar</strong>");
+		currentPage--;}
     return false;
 });
 
@@ -68,7 +69,12 @@ $('.clickAnt').click(function() {
 	currentPage--;
 	var numero =  document.getElementById("numComent").innerHTML;
 	if (currentPage >= 0)
-		$("#espacioComent").load("/comentarios?page="+currentPage+" #espacioComent");		
+		$("#espacioComent").load("/comentarios?page="+currentPage+" #espacioComent");
+	else{
+		currentPage++;
+		currentPage++;
+	}
+
     return false;
 });
 </script>

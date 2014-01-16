@@ -4,7 +4,7 @@ Puka::Application.routes.draw do
   get "/hospedaje" => "principal#hotel"
   get "/instalaciones-y-servicios" => "principal#instalaciones"
   get "/ubicacion" => "principal#ubicacion"
-  get "/las-habitaciones" => "principal#nosotros"
+  get "/nosotros" => "principal#nosotros"
   get "/turismo-cochabamba" => "principal#turismo"
   get "/comentarios" => "principal#comentarios"
   get "/mail-telefono" => "principal#contacto"

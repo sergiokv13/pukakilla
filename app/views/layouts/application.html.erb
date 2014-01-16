@@ -62,6 +62,13 @@
           <li> <a href="/hospedaje">El Hotel</a> </li>
         <%end%>
 
+         <% if current_uri = request.env['PATH_INFO'].to_s == "/nosotros" %>
+          <a class="highclass"href="/nosotros">Nosotros</a>
+        <%else%>
+          <li><a href="/nosotros">Nosotros</a></li>
+        <%end%>
+
+
         <% if current_uri = request.env['PATH_INFO'].to_s == "/instalaciones-y-servicios" %>
           <a class="highclass"href="/instalaciones-y-servicios">Instalaciones y servicios</a>
         <%else%>
