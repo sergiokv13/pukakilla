@@ -7,6 +7,7 @@ Puka::Application.routes.draw do
   get "/nosotros" => "principal#nosotros"
   get "/turismo-cochabamba" => "principal#turismo"
   get "/comentarios" => "principal#comentarios"
+  get "/las-habitaciones" => "principal#lasHabitaciones"
   get "/mail-telefono" => "principal#contacto"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,24 @@
+<% content_for :title, "Las habitaciones" %>
+
+<h2>Las habitaciones</h2>
+
+<a rel="gallery" class="fancybox" href="/assets/doble-azul.jpg"><img src="/assets/doble-azul.jpg" alt="Habitacion doble azul" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/doble-rosa.jpg"><img src="/assets/doble-rosa.jpg" alt="Habitacion doble rosa" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/triple.jpg"><img src="/assets/triple.jpg" alt="Habitacion triple" height="100px" width="100px"/></a>
+
+<a rel="gallery" class="fancybox" href="/assets/matrimonial.jpg"><img src="/assets/matrimonial.jpg" alt="Habitacion matrimonial" height="100px" width="100px"/></a>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox({
+            beforeShow : function() {
+                var alt = this.element.find('img').attr('alt');
+                this.inner.find('img').attr('alt', alt);
+                this.title = alt;
+            }
+        });
+    });
+</script>

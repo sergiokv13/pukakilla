@@ -52,8 +52,6 @@ a:focus {
 	z-index: 10;
 	position: absolute; 
 	box-shadow: 10px 4px 5px #888888;
-	opacity:0.8;
-filter:alpha(opacity=80)
 }
 
 #header{

@@ -11,6 +11,9 @@ class PrincipalController < ApplicationController
   def instalaciones
   end
 
+  def lasHabitaciones
+  end
+
   def ubicacion
   end
 
