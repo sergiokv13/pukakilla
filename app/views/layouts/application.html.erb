@@ -4,6 +4,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= favicon_link_tag "/assets/favicon.ico" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <script type="text/javascript" src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'> </script>
      <link rel="stylesheet" href="/assets/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" /> <script type="text/javascript" src="/assets/jquery.fancybox.pack.js?v=2.1.5"></script> <link rel="stylesheet" href="/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css"media="screen" /> <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script> <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <%= csrf_meta_tag %>
@@ -117,11 +118,13 @@
     </ul>
 </div>
   <div id="container">
+      <div id = "flashNotice">
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <% end %>
+      <% end %></div>
       <%= content_tag :h1, yield(:title) if show_title? %>
       <%= yield %>
+    </div>
     </div>
      
      
